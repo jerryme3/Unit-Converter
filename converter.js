@@ -1,7 +1,7 @@
 const RATES_IN_METERS = {
   m: 1,
   cm: 0.01,
-  in: 0.0254, // Fixed decimal place
+  in: 0.0254,
   ft: 0.3048,
   km: 1000
 };
@@ -38,7 +38,6 @@ function showSection(sectionId) {
         section.style.display = 'none';
     });
 
-    // Show the selected section
     const activeSection = document.getElementById(sectionId);
     if (activeSection) {
         activeSection.style.display = 'block';
@@ -50,7 +49,6 @@ function convertLength(value, fromUnit, toUnit) {
         return null;
     }
 
-    // 2. Convert input to base unit (meters), then to target unit
     const valueInMeters = value * RATES_IN_METERS[fromUnit];
     const convertedValue = valueInMeters / RATES_IN_METERS[toUnit];
 
